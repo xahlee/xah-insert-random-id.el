@@ -6,7 +6,7 @@
 ;; Maintainer: Xah Lee
 ;; Created: 2013-04-19
 ;; Package-Requires: ((emacs "24.1"))
-;; Version: 0.3
+;; Version: 0.4
 ;; Keywords: convenience
 
 ;; feel free to use this code in anyway you like. Credit and donation is appreciated. Thanks.
@@ -27,28 +27,40 @@
 (random t) ; set seed
 
 (defun xah-insert-random-hex (φn)
-  "Insert φn random hexidecimal digits.
-φn default to 8.
+  "Insert φn random hexadecimal digits.
+φn default to 5.
 Call `universal-argument' before for different count.
 URL `http://ergoemacs.org/emacs/elisp_insert_random_number_string.html'
-Version 2016-12-20"
+Version 2017-05-24"
   (interactive "P")
-  (let* ((ξcharset "0123456789abcdef" )
-         (ξbaseCount (length ξcharset)))
-    (dotimes (_ (if (numberp φn) (abs φn) 8 ))
-      (insert (elt ξcharset (random ξbaseCount))))))
+  (let* (($charset "0123456789abcdef" )
+         ($baseCount (length $charset)))
+    (dotimes (_ (if (numberp φn) (abs φn) 5 ))
+      (insert (elt $charset (random $baseCount))))))
 
 (defun xah-insert-random-string (φn)
-  "Insert a random alphanumerics string of length 8.
+  "Insert a random alphanumerics string of length 5.
 The possible chars are 0 to 9, and a to z (lower case).
 Call `universal-argument' before for different count.
 URL `http://ergoemacs.org/emacs/elisp_insert_random_number_string.html'
-Version 2016-12-20"
+Version 2017-05-24"
   (interactive "P")
-  (let* ((ξcharset "1234567890abcdefghijklmnopqrstuvwxyz")
-         (ξbaseCount (length ξcharset)))
-    (dotimes (_ (if (numberp φn) (abs φn) 8))
-      (insert (elt ξcharset (random ξbaseCount))))))
+  (let* (($charset "1234567890abcdefghijklmnopqrstuvwxyz")
+         ($baseCount (length $charset)))
+    (dotimes (_ (if (numberp φn) (abs φn) 5))
+      (insert (elt $charset (random $baseCount))))))
+
+(defun xah-insert-random-number (φn)
+  "Insert φn random digits.
+φn default to 5.
+Call `universal-argument' before for different count.
+URL `http://ergoemacs.org/emacs/elisp_insert_random_number_string.html'
+Version 2017-05-24"
+  (interactive "P")
+  (let (($charset "1234567890" )
+        ($baseCount 10))
+    (dotimes (_ (if (numberp φn) (abs φn) 5 ))
+      (insert (elt $charset (random $baseCount))))))
 
 (defun xah-insert-random-uuid ()
   "Insert a UUID. This uses a simple hashing of variable data.
@@ -81,18 +93,6 @@ URL `http://ergoemacs.org/emacs/elisp_generate_uuid.html'
                     (format "%x" (+ 8 (random 4)))
                     (substring myStr 17 20)
                     (substring myStr 20 32)))))
-
-(defun xah-insert-random-number (φn)
-  "Insert φn random digits.
-φn default to 5.
-Call `universal-argument' before for different count.
-URL `http://ergoemacs.org/emacs/elisp_insert_random_number_string.html'
-Version 2016-12-20"
-  (interactive "P")
-  (let ((ξcharset "1234567890" )
-        (ξbaseCount 10))
-    (dotimes (_ (if (numberp φn) (abs φn) 5 ))
-      (insert (elt ξcharset (random ξbaseCount))))))
 
 (provide 'xah-insert-random-id)
 
