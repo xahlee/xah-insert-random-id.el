@@ -1,15 +1,16 @@
 ;;; xah-insert-random-id.el --- commands to insert random ID. -*- coding: utf-8; lexical-binding: t; -*-
 
-;; Copyright © 2013, 2016 by Xah Lee
+;; Copyright © 2013-2017 by Xah Lee
 
 ;; Author: Xah Lee <xah@xahlee.info> ( http://xahlee.info/ )
 ;; Maintainer: Xah Lee
 ;; Created: 2013-04-19
 ;; Package-Requires: ((emacs "24.1"))
 ;; Version: 0.5.0
+;; License: GPL v3
 ;; Keywords: convenience
 
-;; feel free to use this code in anyway you like. Credit and donation is appreciated. Thanks.
+;; This file is not part of GNU Emacs.
 
 ;;; Commentary:
 ;; misc collection of commands to insert hex, digits, of fixed number of digits.
