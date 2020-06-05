@@ -5,8 +5,7 @@
 ;; Maintainer: Xah Lee
 ;; Created: 2013-04-19
 ;; Package-Requires: ((emacs "24.1"))
-;; Version: 0.5.0
-;; Version: 0.5.20200605002331
+;; Version: 0.6.20200605004846
 ;; License: GPL v3
 ;; Keywords: convenience
 
