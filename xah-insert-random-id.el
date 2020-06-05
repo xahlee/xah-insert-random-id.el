@@ -5,7 +5,7 @@
 ;; Maintainer: Xah Lee
 ;; Created: 2013-04-19
 ;; Package-Requires: ((emacs "24.1"))
-;; Version: 0.6.20200605005723
+;; Version: 0.6.20200605012638
 ;; License: GPL v3
 ;; Keywords: convenience
 
@@ -98,7 +98,7 @@ Version 2017-05-24"
 
 (defun xah-insert-random-uuid ()
   "Insert a UUID.
-This commands calls “uuidgen” on MacOS, Linux, and calls PowelShell Microsoft Windows.
+This commands calls “uuidgen” on MacOS, Linux, and calls PowelShell on Microsoft Windows.
 URL `http://ergoemacs.org/emacs/elisp_generate_uuid.html'
 Version 2020-06-04"
   (interactive)
