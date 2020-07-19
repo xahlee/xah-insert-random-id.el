@@ -6,6 +6,7 @@
 ;; Created: 2013-04-19
 ;; Package-Requires: ((emacs "24.1"))
 ;; Version: 0.6.20200605012638
+;; Version: 1.0.20200719111959
 ;; License: GPL v3
 ;; Keywords: convenience
 
@@ -62,12 +63,12 @@ Version 2017-08-03"
 
 (defun xah-insert-random-string (NUM)
   "Insert a random alphanumerics string of length 5.
-The possible chars are digits and lower case English letters but without any aeouil01 
+The possible chars are digits and upper/lower case English letters but without any vowels nor Ll01.
 Call `universal-argument' before for different count.
 URL `http://ergoemacs.org/emacs/elisp_insert_random_number_string.html'
-Version 2019-01-16"
+Version 2020-07-19"
   (interactive "P")
-  (let* (($charset "bcdfghjkmnpqrstvwxyz23456789")
+  (let* (($charset "bcdfghjkmnpqrstvwxyz23456789BCDFGHJKMNPQRSTVWXYZ")
          ($baseCount (length $charset)))
     (dotimes (_ (if (numberp NUM) (abs NUM) 5))
       (insert (elt $charset (random $baseCount))))))
